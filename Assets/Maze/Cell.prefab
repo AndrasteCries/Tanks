@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2257975159018060122}
   - component: {fileID: 2257975159018060120}
   - component: {fileID: 2257975159018060123}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WallBottom
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -158,8 +158,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2257975159037034363}
   - component: {fileID: 2257975159037034360}
-  - component: {fileID: 2257975159037034361}
-  m_Layer: 0
+  - component: {fileID: 1506002147734072353}
+  m_Layer: 6
   m_Name: WallLeft
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -280,7 +280,7 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 0
   m_Loop: 0
---- !u!70 &2257975159037034361
+--- !u!70 &1506002147734072353
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -293,8 +293,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0014395863, y: 1.0012157}
-  m_Size: {x: 0.21178195, y: 2.2058582}
+  m_Offset: {x: 0, y: 1}
+  m_Size: {x: 0.21516705, y: 2.2048402}
   m_Direction: 0
 --- !u!1 &2257975160612057773
 GameObject:
@@ -306,7 +306,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2257975160612057762}
   - component: {fileID: 4680035495934663674}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
