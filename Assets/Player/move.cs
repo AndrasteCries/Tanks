@@ -7,16 +7,24 @@ public class move : MonoBehaviour
     public float speed; // швидкість руху об'єкта
     public float rotationSpeed; // швидкість повороту об'єкта
 
-    void Update()
+    private Rigidbody2D rb2d;
+
+    void Start()
     {
-		float moveVertical = Input.GetAxisRaw("Vertical"); // використовуємо клавіші W та S
-        int i;
-        if (moveVertical < 0) i = -1;
-        else i = 1;
-        // Рух вперед та назад
-		transform.Translate(Vector3.up * moveVertical * speed * Time.deltaTime);
-        // Поворот вліво та вправо
+        rb2d = GetComponent<Rigidbody2D>();
+    }
+
+    void FixedUpdate()
+    {
+        float moveVertical = Input.GetAxisRaw("Vertical"); // використовуємо клавіші W та S
+                                                           // Поворот вліво та вправо
         float rotation = Input.GetAxisRaw("Horizontal"); // використовуємо клавіші A та D
-        transform.Rotate(Vector3.back * i, rotation * rotationSpeed * Time.deltaTime);
+        float angle = transform.rotation.eulerAngles.z - rotation * rotationSpeed * Time.deltaTime;
+        rb2d.MoveRotation(angle);
+
+        // Получаем вектор направления из угла поворота
+        Vector2 direction = Quaternion.Euler(0f, 0f, angle) * Vector2.up;
+        // Рух вперед та назад
+        rb2d.MovePosition(rb2d.position + direction * moveVertical * speed * Time.deltaTime);
     }
 }
