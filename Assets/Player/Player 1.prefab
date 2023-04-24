@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2103606572799705754}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2103606571758315750}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.005, y: 0.17, z: 0}
+  m_LocalPosition: {x: 0.005, y: 0.199, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 2103606573150984953}
   - component: {fileID: 2103606573150984952}
   - component: {fileID: -2084354669489567706}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -148,11 +148,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 2103606572799705754}
   bulletPrefab: {fileID: 2646806271498387699, guid: 7c840817d0538724b89c05444553edaa, type: 3}
-  speed: 5
-  maxDistance: 10
-  obstacleMask:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!50 &2103606573150984952
 Rigidbody2D:
   serializedVersion: 4

@@ -1,41 +1,45 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed = 10f;          // Скорость пули
-    public int maxBounces = 3;         // Максимальное количество отскоков
+    public float minSpeed = 10f;
+    public float lifetime = 2f; // время жизни в секундах
 
-    private int currentBounces = 0;    // Текущее количество отскоков
-    private Rigidbody2D rb2d;          // Ссылка на Rigidbody2D
+    private Vector3 lastFrameVelocity;
+    private Rigidbody2D rb;
+    private float timeAlive;
 
     void Start()
     {
-        rb2d = GetComponent<Rigidbody2D>();
-        rb2d.velocity = transform.right * speed;
+        rb = GetComponent<Rigidbody2D>();
+        rb.velocity = transform.right * 10f;
+        timeAlive = 0f; // обнуляем таймер при создании пули
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void Update()
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        timeAlive += Time.deltaTime; // увеличиваем таймер каждый кадр
+        if (timeAlive >= lifetime)
         {
-            Destroy(gameObject);
-            Destroy(collision.gameObject);
+            Destroy(gameObject); // уничтожаем объект пули после окончания времени жизни
         }
-        else
-        {
-            currentBounces++;
-            if (currentBounces >= maxBounces)
-            {
-                Destroy(gameObject);
-            }
-            else
-            {
-                // Применяем новую скорость к пуле
-                rb2d.velocity = Vector2.Reflect(-collision.relativeVelocity.normalized, collision.contacts[0].normal) * speed;
-            }
-        }
+        lastFrameVelocity = rb.velocity;
+    }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            var speed = lastFrameVelocity.magnitude;
+            var direction = Vector3.Reflect(lastFrameVelocity.normalized, collision.contacts[0].normal);
+
+            Debug.Log("Out Direction: " + direction);
+            rb.velocity = direction * minSpeed;
+        }
+        else if (collision.gameObject.CompareTag("Player"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // перезагрузка текущего уровня
+        }
     }
 }
