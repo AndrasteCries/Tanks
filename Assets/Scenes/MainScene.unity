@@ -153,6 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CellPrefab: {fileID: 4680035495934663674, guid: 957767487f3c0a848915d162a0a23bf0, type: 3}
+  BonusSpawnTime: 2
+  ShotGunBonus: {fileID: 0}
 --- !u!4 &509838774
 Transform:
   m_ObjectHideFlags: 0
@@ -227,6 +229,14 @@ PrefabInstance:
     - target: {fileID: 2103606573150984956, guid: 430c2ba0277927a4bb40ad953db3e661, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103606573150984958, guid: 430c2ba0277927a4bb40ad953db3e661, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103606573150984958, guid: 430c2ba0277927a4bb40ad953db3e661, type: 3}
+      propertyPath: rotationSpeed
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 430c2ba0277927a4bb40ad953db3e661, type: 3}

@@ -9,16 +9,25 @@ public class Bullet : MonoBehaviour
     private Vector3 lastFrameVelocity;
     private Rigidbody2D rb;
     private float timeAlive;
+    private SpriteRenderer spriteRenderer;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         rb.velocity = transform.right * 10f;
         timeAlive = 0f; // обнуляем таймер при создании пули
     }
 
     void Update()
     {
+        // Вычисляем значение альфа-канала, используя процент времени жизни, оставшийся для пули
+        float alpha = Mathf.Clamp01((lifetime - timeAlive) / lifetime);
+
+        // Устанавливаем новое значение альфа-канала в материале SpriteRenderer
+        Color color = spriteRenderer.color;
+        color.a = alpha;
+        spriteRenderer.color = color;
         timeAlive += Time.deltaTime; // увеличиваем таймер каждый кадр
         if (timeAlive >= lifetime)
         {

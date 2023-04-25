@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 577b1a05140bbdd4b86bf8a66f50f456
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - shotgunSprite: {fileID: 21300000, guid: e608e6b0647ef754ca3b49ee462114bd, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
