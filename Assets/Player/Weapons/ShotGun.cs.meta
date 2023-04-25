@@ -4,7 +4,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - shotgunSprite: {fileID: 21300000, guid: e608e6b0647ef754ca3b49ee462114bd, type: 3}
+  - shotGun: {fileID: 6601162732039113624, guid: 6b3700ca8242c8b499cea735deca5a2f, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

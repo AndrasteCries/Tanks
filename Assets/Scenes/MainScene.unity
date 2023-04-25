@@ -154,7 +154,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CellPrefab: {fileID: 4680035495934663674, guid: 957767487f3c0a848915d162a0a23bf0, type: 3}
   BonusSpawnTime: 2
-  ShotGunBonus: {fileID: 0}
+  ShotGunPrefab: {fileID: 48034362015631849, guid: 6b3700ca8242c8b499cea735deca5a2f, type: 3}
+  LaserPrefab: {fileID: 4543325426451186240, guid: 9908f3d9a1eb36e4ab1d1e08e8bc845b, type: 3}
+  SpikeBallPrefab: {fileID: -6511727907368237051, guid: 6f93208cc8f494043ad57afef6ba259a, type: 3}
+  RocketPrefab: {fileID: -1607928974261709207, guid: 98fc90aca4c2b3f4bab7f02750396c84, type: 3}
 --- !u!4 &509838774
 Transform:
   m_ObjectHideFlags: 0

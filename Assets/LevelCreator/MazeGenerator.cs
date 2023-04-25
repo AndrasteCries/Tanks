@@ -12,7 +12,7 @@ public class MazeGeneratorCell
 
     public bool Visited = false;
 
-    private ShotGun gangawe;
+    private Buff gangawe;
     public bool haveBuff() 
     {
         if (gangawe == null)
@@ -22,15 +22,15 @@ public class MazeGeneratorCell
         else return true;
     }
 
-    public void spawnBuff(ShotGun buff)
+    public void spawnBuff(Buff buff)
     {
-        if (buff == null) { Debug.Log("NUUUUUUUUUUUUULLLLLLLLLLLLL"); }
+        if (buff == null) { Debug.LogError("Buff prebuf is null"); }
         else
         {
             Vector2 spawnBonus = new Vector2(x * 2 - 1, y * 2 - 1);
             float randomZAngle = Random.Range(0, 360);
             Quaternion spawnRotation = Quaternion.Euler(0f, 0f, randomZAngle);
-            gangawe = MonoBehaviour.Instantiate(buff, spawnBonus, spawnRotation).GetComponent<ShotGun>();
+            gangawe = MonoBehaviour.Instantiate(buff, spawnBonus, spawnRotation).GetComponent<Buff>();
             Debug.Log("Bonus spawned coordinate = " + gangawe.transform.position);
         }
     }
@@ -38,8 +38,8 @@ public class MazeGeneratorCell
 
 public class MazeGenerator
 {
-    public int _width = 5;
-    public int _height = 5;
+    public int _width = 3;
+    public int _height = 3;
 
     public MazeGeneratorCell[,] GenerateMaze()
     {

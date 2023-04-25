@@ -8,7 +8,7 @@ public class Buff : MonoBehaviour
     public float y;
     protected SpriteRenderer spriteRenderer;
 
-    private void Start()
+    void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }

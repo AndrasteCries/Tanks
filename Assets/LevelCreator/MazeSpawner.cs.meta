@@ -5,7 +5,7 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - CellPrefab: {fileID: 4680035495934663674, guid: 957767487f3c0a848915d162a0a23bf0, type: 3}
-  - ShotGunBonus: {fileID: 5768763011874215850, guid: 3d72e20f6a341054badabd916f4b473e, type: 3}
+  - ShotGunBonus: {fileID: 48034362015631849, guid: 6b3700ca8242c8b499cea735deca5a2f, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

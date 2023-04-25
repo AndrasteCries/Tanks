@@ -6,7 +6,10 @@ public class MazeSpawner : MonoBehaviour
 {
     public Cell CellPrefab;
     public float BonusSpawnTime = 2f;
-    public ShotGun ShotGunBonus;
+    public ShotGun ShotGunPrefab;
+    public Laser LaserPrefab;
+    public SpikeBall SpikeBallPrefab;
+    public Rocket RocketPrefab;
 
     MazeGeneratorCell[,] maze;
     void Start()
@@ -18,6 +21,7 @@ public class MazeSpawner : MonoBehaviour
         {
             for (int j = 0; j < maze.GetLength(1); j++)
             {
+                if(CellPrefab == null) Debug.Log("CELLLL PREFAB IS NUULLL"); 
                 Cell c = Instantiate(CellPrefab, new Vector2(i * 2, j * 2), Quaternion.identity).GetComponent<Cell>();
                 c.WallLeft.SetActive(maze[i, j].WallLeft);
                 c.WallBottom.SetActive(maze[i, j].WallBottom);
@@ -33,11 +37,28 @@ public class MazeSpawner : MonoBehaviour
         int randomCellY = Random.Range(1, maze.GetLength(1));
         if (!maze[randomCellX, randomCellY].haveBuff())
         {
-            if (ShotGunBonus == null)
+            if (ShotGunPrefab == null)
             {
-                Debug.Log("PIDOR");
+                Debug.LogError("Prefab is null");
             }
-            maze[randomCellX, randomCellY].spawnBuff(ShotGunBonus);
+            switch(Random.Range(1, 5))
+            {
+                case 1:
+                    maze[randomCellX, randomCellY].spawnBuff(ShotGunPrefab);
+                    break;
+                case 2:
+                    maze[randomCellX, randomCellY].spawnBuff(LaserPrefab);
+                    break;
+                case 3:
+                    maze[randomCellX, randomCellY].spawnBuff(SpikeBallPrefab);
+                    break;
+                case 4:
+                    maze[randomCellX, randomCellY].spawnBuff(RocketPrefab);
+                    break;
+                default:
+                    Debug.LogError("PrefabErrorSpawn");
+                    break;
+            }
         }
     }
 }
