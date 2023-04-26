@@ -38,8 +38,8 @@ public class MazeGeneratorCell
 
 public class MazeGenerator
 {
-    public int _width = 3;
-    public int _height = 3;
+    public int _width = 4;
+    public int _height = 4;
 
     public MazeGeneratorCell[,] GenerateMaze()
     {

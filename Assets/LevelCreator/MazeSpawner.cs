@@ -6,10 +6,10 @@ public class MazeSpawner : MonoBehaviour
 {
     public Cell CellPrefab;
     public float BonusSpawnTime = 2f;
-    public ShotGun ShotGunPrefab;
-    public Laser LaserPrefab;
-    public SpikeBall SpikeBallPrefab;
-    public Rocket RocketPrefab;
+    public ShotGunBuff ShotGunPrefab;
+    public LaserBuff LaserPrefab;
+    public SpikeBallBuff SpikeBallPrefab;
+    public RocketBuff RocketPrefab;
 
     MazeGeneratorCell[,] maze;
     void Start()
@@ -28,7 +28,7 @@ public class MazeSpawner : MonoBehaviour
             }
         }
 
-        InvokeRepeating("SpawnBonus", BonusSpawnTime, BonusSpawnTime);
+        //InvokeRepeating("SpawnBonus", BonusSpawnTime, BonusSpawnTime);
 
     }
     void SpawnBonus()

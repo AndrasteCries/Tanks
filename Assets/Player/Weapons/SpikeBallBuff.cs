@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpikeBall : Buff
+public class SpikeBallBuff : Buff
 {
     public Sprite sprite;
 

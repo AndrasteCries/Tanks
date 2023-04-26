@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        rb.velocity = transform.right * 10f;
+        rb.velocity = transform.up * 10f;
         timeAlive = 0f; // обнуляем таймер при создании пули
     }
 

@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Laser : Buff
+public class ShotGunBuff : Buff
 {
     public Sprite sprite;
 

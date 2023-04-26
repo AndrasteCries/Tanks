@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class ShotGun : Buff
+public class RocketBuff : Buff
 {
     public Sprite sprite;
 
