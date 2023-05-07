@@ -38,8 +38,8 @@ public class MazeGeneratorCell
 
 public class MazeGenerator
 {
-    public int _width = 4;
-    public int _height = 4;
+    public int _width = 15;
+    public int _height = 15;
 
     public MazeGeneratorCell[,] GenerateMaze()
     {
@@ -63,7 +63,6 @@ public class MazeGenerator
             maze[_width - 1, y].WallBottom = false;
         }
         RemoveWallsWithBacktracker(maze);
-        
 
         return maze;
     }

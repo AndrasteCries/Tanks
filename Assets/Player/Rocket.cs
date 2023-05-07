@@ -5,12 +5,11 @@ public class Rocket : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
     private bool afterShot = false;
-
-
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -27,8 +26,7 @@ public class Rocket : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("EXIT TANK");
-            afterShot = true;     
+            afterShot = true;
         }
     }
 }

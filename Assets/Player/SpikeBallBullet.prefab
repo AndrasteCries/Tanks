@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2646806271498387694}
   - component: {fileID: 2646806271498387697}
   - component: {fileID: 2646806271498387696}
-  - component: {fileID: 2646806271498387692}
+  - component: {fileID: -8437922365601453960}
   m_Layer: 7
   m_Name: SpikeBallBullet
   m_TagString: Bullet
@@ -124,7 +124,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2646806271498387692
+--- !u!114 &-8437922365601453960
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,8 +133,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2646806271498387699}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6ee9fb21fb78a74a9f8266287bd1955, type: 3}
+  m_Script: {fileID: 11500000, guid: 59667c3d46a0dee4583b381cdf511a9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   minSpeed: 5
   lifetime: 2
+  trianglePrefab: {fileID: 8669559168935010494, guid: fb2beac8256e41049b5d6f51a8383044, type: 3}
